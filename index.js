@@ -19,6 +19,7 @@ const findCurrentPos = ()=>{
 
 const weatherApiKey = 'db9329c6a7b34854de9265bfe31d64bc';
 const userLocationApiKey = 'ed4e8539aad36e';
+const port = process.env.PORT || 3001;
 var city = findCurrentPos();
 
 const server = http.createServer((req, res) => {
@@ -49,7 +50,7 @@ const server = http.createServer((req, res) => {
         }
     })();
 }
-).listen(8000, "127.0.0.1", () => {
+).listen(port, () => {
     console.log("Listening at port: 8000")
 })
 
